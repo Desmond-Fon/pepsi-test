@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: "Croissant One", serif;
+}
+
+.paragraph {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.main {
+  min-height: 80vh;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #005890;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: medium;
+  color: #005890;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #005890;
+  color: white;
+  border: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.nav {
+  background-color: aliceblue;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.footer {
+  background-color: aliceblue;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: start;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer-links {
+  text-decoration: none;
+}
+
+.footer-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.footer-social-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.copyright {
+  color: #005890;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+a {
+  color: #005890;
+}
+
+a:hover {
+  color: #ea1d38;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
