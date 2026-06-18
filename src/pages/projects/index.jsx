@@ -5,7 +5,7 @@ function Projects() {
     return (
         <>
             <Nav />
-            <main className='main'>
+            <main className="min-h-[80vh]">
 
             </main>
             <Footer />

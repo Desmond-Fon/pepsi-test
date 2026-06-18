@@ -1,15 +1,19 @@
+import { Link } from "react-router-dom"
 
-function Card({product}) {
+function Card({ product }) {
   return (
-      <div className="product-grid-item">
-          <img src={product.image} alt="pepsi" className="product-grid-item-img" />
-          <div className="product-grid-item-content">
-              <h3 className="grid-heading heading hero-red">{product.name}</h3>
-              <p className="grid-description paragraph hero-blue two-line-ellipsis">{product.description}</p>
-              <p className="grid-price paragraph hero-red">${product.price}</p>
-              <button className="grid-button">Buy Now</button>
-          </div>
-      </div>  )
+    <div className="flex flex-col gap-2.5 items-center rounded-[20px] overflow-hidden shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
+      <img src={product.image} alt="pepsi" className="w-full h-[300px] object-cover" />
+      <div className="flex flex-col gap-5 p-5 w-full">
+        <h3 className="text-2xl font-heading text-brand-red">{product.name}</h3>
+        <p className="text-lg font-body text-brand-blue line-clamp-2">{product.description}</p>
+        <p className="text-2xl font-bold italic font-body text-brand-red">${product.price}</p>
+        <Link className="w-full" to={`/product-detail/${product.id}`}>
+          <button className="w-full font-body px-5 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer">Buy Now</button>
+        </Link>
+      </div>
+    </div>
+  )
 }
 
 export default Card
