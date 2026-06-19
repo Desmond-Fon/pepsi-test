@@ -3,9 +3,16 @@ import Footer from "../../components/Footer"
 import Nav from "../../components/Nav"
 import products from "../../components/products"
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 function ProductDetail() {
     const { id } = useParams()
+    const [quantity, setQuantity] = useState(1)
+
+    useEffect(() => {
+        console.log(quantity)
+        console.log('This useeffect is called')
+    }, [quantity])
 
     const product = products.find((product) => product.id === Number(id))
 
@@ -13,7 +20,21 @@ function ProductDetail() {
         return <div>No product found!</div>
     }
 
-    console.log(product)
+    const increaseQuantity = () => {
+        setQuantity((prev) => prev + 1)
+    }
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity((prev) => prev - 1)
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert(`${quantity} ${product.name} added to cart!`)
+    }
+
 
     return (
         <div className="">
@@ -30,7 +51,14 @@ function ProductDetail() {
                         <h1 className="text-[40px] font-heading bg-gradient-to-br from-brand-red to-brand-blue bg-clip-text text-transparent inline-block">{product.name}</h1>
                         <p className="text-lg font-body">{product.description}</p>
                         <p className="text-2xl font-bold italic font-body text-brand-red">${product.price}</p>
-                        <button className="w-fit font-body px-10 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer">Buy Now</button>
+
+                        <div className="flex justify-start items-center gap-2.5">
+                            <button className="w-10 h-10 rounded-[50%] bg-brand-blue text-white border-none cursor-pointer" onClick={decreaseQuantity}>-</button>
+                            <span>{quantity}</span>
+                            <button className="w-10 h-10 rounded-[50%] bg-brand-blue text-white border-none cursor-pointer" onClick={increaseQuantity}>+</button>
+                        </div>
+                        <button className="w-fit font-body px-10 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer" onClick={(e) => handleSubmit(e)}
+                        >Buy Now</button>
                     </div>
                 </div>
             </main>
