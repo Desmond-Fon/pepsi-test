@@ -4,6 +4,7 @@ import About from './pages/about'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
 import ProductDetail from './pages/product-detail'
+import Users from './pages/users'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product-detail/:id" element={<ProductDetail />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </BrowserRouter>
     </>

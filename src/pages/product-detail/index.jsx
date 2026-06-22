@@ -8,11 +8,17 @@ import { useState, useEffect } from "react"
 function ProductDetail() {
     const { id } = useParams()
     const [quantity, setQuantity] = useState(1)
+    const [showText, setShowText] = useState(true)
+
+    const toggleText = () => {
+        setShowText(!showText)
+    }
 
     useEffect(() => {
         console.log(quantity)
-        console.log('This useeffect is called')
-    }, [quantity])
+        console.log('This useEffect is called')
+        console.log(showText)
+    }, [quantity, showText])
 
     const product = products.find((product) => product.id === Number(id))
 
@@ -58,9 +64,13 @@ function ProductDetail() {
                             <button className="w-10 h-10 rounded-[50%] bg-brand-blue text-white border-none cursor-pointer" onClick={increaseQuantity}>+</button>
                         </div>
                         <button className="w-fit font-body px-10 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer" onClick={(e) => handleSubmit(e)}
-                        >Buy Now</button>
+                        >Add to Cart</button>
                     </div>
+
                 </div>
+                <button className="font-body px-5 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer" onClick={toggleText}>{showText ? "Hide Text" : "Show Text"}</button>
+
+                {/* {showText && <p>{product.name}</p>} */}
             </main>
             <Footer />
         </div>

@@ -9,7 +9,7 @@ function Card({ product }) {
         <p className="text-lg font-body text-brand-blue line-clamp-2">{product.description}</p>
         <p className="text-2xl font-bold italic font-body text-brand-red">${product.price}</p>
         <Link className="w-full" to={`/product-detail/${product.id}`}>
-          <button className="w-full font-body px-5 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer">Buy Now</button>
+          <button className="w-full font-body px-5 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer">View Product</button>
         </Link>
       </div>
     </div>
