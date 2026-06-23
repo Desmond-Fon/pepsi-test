@@ -5,6 +5,8 @@ import Projects from './pages/projects'
 import Contact from './pages/contact'
 import ProductDetail from './pages/product-detail'
 import Users from './pages/users'
+import PostDetail from "./pages/post-detail"
+// import Post from "./pages/post"
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/product-detail/:id" element={<ProductDetail />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/post-detail/:id" element={<PostDetail />} />
+          {/* <Route path="/post" element={<Post />} /> */}
         </Routes>
       </BrowserRouter>
     </>

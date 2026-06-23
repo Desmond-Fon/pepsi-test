@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 function Nav() {
     return (
@@ -10,10 +10,11 @@ function Nav() {
                     <p className="font-heading font-bold uppercase text-brand-blue">Portfolio</p>
                 </div>
                 <ul className="flex gap-5 list-none">
-                    <li><Link className="no-underline font-medium text-brand-blue hover:text-brand-red" to="/">Home</Link></li>
-                    <li><Link className="no-underline font-medium text-brand-blue hover:text-brand-red" to="/about">About</Link></li>
-                    <li><Link className="no-underline font-medium text-brand-blue hover:text-brand-red" to="/projects">Projects</Link></li>
-                    <li><Link className="no-underline font-medium text-brand-blue hover:text-brand-red" to="/contact">Contact</Link></li>
+                    <li><NavLink className={({isActive}) => isActive ? "text-brand-red" : "text-brand-blue"} to="/">Home</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? "text-brand-red" : "text-brand-blue"} to="/about">About</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? "text-brand-red" : "text-brand-blue"} to="/projects">Projects</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? "text-brand-red" : "text-brand-blue"} to="/contact">Contact</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? "text-brand-red" : "text-brand-blue"} to="/users">Users</NavLink></li>
                 </ul>
                 <div className="flex gap-2.5">
                     <button className="font-body px-5 py-2.5 rounded-[30px] bg-brand-blue text-white border-none cursor-pointer">Login</button>

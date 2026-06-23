@@ -54,7 +54,7 @@ function ProductDetail() {
                     <img src={product.image} alt={product.name} className="w-[40%] h-[500px] object-contain" />
 
                     <div className="w-[60%] flex flex-col gap-6 ">
-                        <h1 className="text-[40px] font-heading bg-gradient-to-br from-brand-red to-brand-blue bg-clip-text text-transparent inline-block">{product.name}</h1>
+                        <h1 className="text-[40px] font-heading bg-linear-to-br from-brand-red to-brand-blue bg-clip-text text-transparent inline-block">{product.name}</h1>
                         <p className="text-lg font-body">{product.description}</p>
                         <p className="text-2xl font-bold italic font-body text-brand-red">${product.price}</p>
 
